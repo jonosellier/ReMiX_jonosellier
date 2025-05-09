@@ -1,0 +1,1081 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d">
+
+  <sys:String x:Key="ExtraMetadataPath">C:\Users\Jono\AppData\Local\Playnite</sys:String>
+
+  <Color x:Key="BlackColor">#000000</Color>
+  <Color x:Key="WhiteColor">#F6F6F6</Color>
+  <Color x:Key="GlyphColor">#26b7ff</Color>
+  <Color x:Key="GlyphLightColor">#F6F6F6</Color>
+  <Color x:Key="BorderDark">#848484</Color>
+  <Color x:Key="BorderLight">#f8f8ff</Color>
+  <Color x:Key="BorderBright">#BF36e7ff</Color>
+  <Color x:Key="Background">#171717</Color>
+  <Color x:Key="SubBackground">#16171b</Color>
+  <Color x:Key="SwitchViewBackground">#0b0418</Color>
+  <Color x:Key="SelectionLightColor">#26b7ff</Color>
+  <Color x:Key="OverlayColor">#242424</Color>
+  <Color x:Key="ControlBackgroundColor">#222328</Color>
+  <Color x:Key="ControlBackgroundColorLight">#e0e0e0</Color>
+  <Color x:Key="ControlBackgroundColorDark">#000000</Color>
+  <Color x:Key="AlternativeButtonColor">#00000000</Color>
+  <Color x:Key="TextColor">#F6F6F6</Color>
+  <Color x:Key="TextColorDark">#757575</Color>
+  <Color x:Key="TextSecondaryColor">#BFEAD3CF</Color>
+  <Color x:Key="TextWhiteColor">#f8f8ff</Color>
+
+  <SolidColorBrush x:Key="TextBrush"
+                   Color="{DynamicResource TextColor}"/>
+  <SolidColorBrush x:Key="TextBrushDark"
+                   Color="{DynamicResource TextColorDark}"/>
+  <SolidColorBrush x:Key="TextWhiteBrush"
+                   Color="{DynamicResource TextWhiteColor}"/>
+  <SolidColorBrush x:Key="TextAltBrush"
+                   Color="{DynamicResource TextSecondaryColor}"/>
+  <SolidColorBrush x:Key="GlyphBrush"
+                   Color="{DynamicResource GlyphColor}"/>
+  <SolidColorBrush x:Key="GlyphLightBrush"
+                   Color="{DynamicResource GlyphLightColor}"/>
+  <SolidColorBrush x:Key="ControlBackgroundBrush"
+                   Color="{DynamicResource ControlBackgroundColor}"/>
+  <SolidColorBrush x:Key="ControlBackgroundLightBrush"
+                   Color="{DynamicResource ControlBackgroundColorLight}"/>
+  <SolidColorBrush x:Key="FilterBackgroundBrush"
+                   Color="{DynamicResource ControlBackgroundColor}"
+                   Opacity="0.4"/>
+  <SolidColorBrush x:Key="SwitchViewBackgroundBrush"
+                   Color="{DynamicResource SwitchViewBackground}"/>
+  <SolidColorBrush x:Key="MainBackgourndBrush"
+                   Color="{DynamicResource BlackColor}"/>
+  <SolidColorBrush x:Key="ComboBoxBorderBrush"
+                   Color="{DynamicResource TextSecondaryColor}"/>
+  <SolidColorBrush x:Key="SelectionLightBrush"
+                   Color="{DynamicResource SelectionLightColor}"/>
+  <SolidColorBrush x:Key="OverlayBrush"
+                   Color="{DynamicResource OverlayColor}"/>
+  <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush"
+                   Color="{DynamicResource ControlBackgroundColorDark}"/>
+  <SolidColorBrush x:Key="AlternativeButtonBrush"
+                   Color="{DynamicResource AlternativeButtonColor}"/>
+  <SolidColorBrush x:Key="BottomBarBackgroundBrush"
+                   Color="{DynamicResource Background}"/>
+  <SolidColorBrush x:Key="BackgroundBrush"
+                   Color="{DynamicResource Background}"/>
+  <SolidColorBrush x:Key="TopBarBackgroundBrush"
+                   Color="{DynamicResource Background}"/>
+  <SolidColorBrush x:Key="ContainerBackgroundBrush"
+                   Color="#000000"
+                   Opacity="0.1"/>
+
+  <sys:Double x:Key="FontSizeSmall">20</sys:Double>
+  <sys:Double x:Key="FontSize">26</sys:Double>
+
+  <sys:Double x:Key="FilterPanelWidth">400</sys:Double>
+
+  <Style x:Key="TextBlockBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="FontWeight"
+            Value="Light"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextBrush}"/>
+  </Style>
+
+  <Style x:Key="TextBlockAltBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextAltBrush}"/>
+  </Style>
+
+  <Style x:Key="TextBlockBoldBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextWhiteBrush}"/>
+  </Style>
+
+  <Style x:Key="TextBlockAltBoldBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextAltBrush}"/>
+  </Style>
+
+  <Style x:Key="TextBlockAltLightBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextAltBrush}"/>
+  </Style>
+
+  <Style x:Key="TextBlockBaseStyleAlt"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextBrush}"/>
+  </Style>
+
+  <Style x:Key="ButtonTextBlockBaseStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{DynamicResource FontSize}"/>
+    <Setter Property="FontFamily"
+            Value="Lato Bold"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextBrush}"/>
+  </Style>
+
+  <LinearGradientBrush x:Key="StaticBorderBrush"
+                       StartPoint="0,1"
+                       EndPoint="1,0">
+    <GradientStop Color="{DynamicResource BorderDark}"
+                  Offset="0"/>
+    <GradientStop Color="{DynamicResource BorderLight}"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ProgressBrush"
+                       StartPoint="0,1"
+                       EndPoint="1,0"
+                       Opacity="0.7">
+    <GradientStop Color="{DynamicResource BorderDark}"
+                  Offset="0"/>
+    <GradientStop Color="{DynamicResource BorderLight}"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <RadialGradientBrush x:Key="MainBackgroundBrush"
+                       GradientOrigin="0.57,0.37"
+                       Center="0.5,0.5"
+                       RadiusX="1"
+                       RadiusY="1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#2c323d"
+                    Offset="0.0"/>
+      <GradientStop Color="#151616"
+                    Offset="1.0"/>
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+
+  <RadialGradientBrush x:Key="ControlBackgroundDarkBrush"
+                       GradientOrigin="0.0,0.0"
+                       Center="0.0,0.0"
+                       RadiusX="1"
+                       RadiusY="1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#32373F"
+                    Offset="-0.1"/>
+      <GradientStop Color="#25282E"
+                    Offset="1.1"/>
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+
+  <LinearGradientBrush x:Key="StaticBorderBrushAlt"
+                       StartPoint="0.5,-0.2"
+                       EndPoint="0.4,1">
+    <GradientStop Color="#282D35"
+                  Offset="0"/>
+    <GradientStop Color="#282D35"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="StaticFlashMenu">
+    <GradientStop Color="#00000000 "
+                  Offset="0"/>
+    <GradientStop Color="#40ffffff"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="FavoriteBrush"
+                       StartPoint="0.5,1"
+                       EndPoint="0,0.5">
+    <GradientStop Color="#AE8626"
+                  Offset="1"/>
+    <GradientStop Color="#D2AC47"
+                  Offset="0.5"/>
+    <GradientStop Color="#EDC967"
+                  Offset="0"/>
+  </LinearGradientBrush>
+
+  <Color x:Key="PlayButtonBackgroundColor1">#399AEC</Color>
+  <Color x:Key="PlayButtonBackgroundColor2">#2A71D8</Color>
+  <Color x:Key="PlayButtonBackgroundColor3">#235ECF</Color>
+  <LinearGradientBrush x:Key="PlayButtonBackgroundBrush"
+                       StartPoint="0.0, 0.0"
+                       EndPoint="1.0, 0.0">
+    <GradientStop Color="{DynamicResource PlayButtonBackgroundColor1}"
+                  Offset="0"/>
+    <GradientStop Color="{DynamicResource PlayButtonBackgroundColor2}"
+                  Offset="0.75"/>
+    <GradientStop Color="{DynamicResource PlayButtonBackgroundColor3}"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <Color x:Key="PlayButtonIsMouseOverBackgroundColor1">#47BDFE</Color>
+  <Color x:Key="PlayButtonIsMouseOverBackgroundColor2">#3794EA</Color>
+  <Color x:Key="PlayButtonIsMouseOverBackgroundColor3">#3081E0</Color>
+  <LinearGradientBrush x:Key="PlayButtonIsMouseOverBackgroundBrush"
+                       StartPoint="0.0, 0.0"
+                       EndPoint="1.0, 0.0">
+    <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor1}"
+                  Offset="0"/>
+    <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor2}"
+                  Offset="0.75"/>
+    <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor3}"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="InstallButtonBackgroundBrush"
+                       StartPoint="0.0, 0.0"
+                       EndPoint="1.0, 0.0">
+    <GradientStop Color="#399AEC"
+                  Offset="0"/>
+    <GradientStop Color="#2A71D8"
+                  Offset="0.75"/>
+    <GradientStop Color="#235ECF"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="InstallButtonIsMouseOverBackgroundBrush"
+                       StartPoint="0.0, 0.0"
+                       EndPoint="1.0, 0.0">
+    <GradientStop Color="#47BDFE"
+                  Offset="0"/>
+    <GradientStop Color="#3794EA"
+                  Offset="0.75"/>
+    <GradientStop Color="#3081E0"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <SolidColorBrush x:Key="PositiveRatingBrush"
+                   Color="#6c3"/>
+  <SolidColorBrush x:Key="NegativeRatingBrush"
+                   Color="#b01010"/>
+  <SolidColorBrush x:Key="MixedRatingBrush"
+                   Color="#fc3"/>
+
+  <Style x:Key="AnimatedCoverBrush"
+         TargetType="Border">
+    <Setter Property="BorderBrush">
+      <Setter.Value>
+        <LinearGradientBrush>
+          <GradientStop Color="#2a3039"
+                        Offset="0"/>
+          <GradientStop Color="#a2899d"
+                        Offset="0.80"/>
+          <GradientStop Color="#dbbda1"
+                        Offset="1"/>
+          <LinearGradientBrush.RelativeTransform>
+            <RotateTransform CenterX="0.5"
+                             CenterY="0.5"/>
+          </LinearGradientBrush.RelativeTransform>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"
+                   Value="True">
+        <DataTrigger.EnterActions>
+          <BeginStoryboard Name="StartCoverBrush">
+            <Storyboard>
+              <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
+                                                BeginTime="00:00:00">
+                <SplineThicknessKeyFrame KeyTime="00:00:00"
+                                         Value="0"/>
+              </ThicknessAnimationUsingKeyFrames>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               BeginTime="0:0:0.1"
+                               Duration="0:0:0.3"/>
+              <DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)"
+                               From="0"
+                               To="359"
+                               Duration="00:00:4"
+                               RepeatBehavior="1x"/>
+            </Storyboard>
+          </BeginStoryboard>
+        </DataTrigger.EnterActions>
+        <DataTrigger.ExitActions>
+          <BeginStoryboard>
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               Duration="0:0:0"/>
+            </Storyboard>
+          </BeginStoryboard>
+          <StopStoryboard BeginStoryboardName="StartCoverBrush"/>
+        </DataTrigger.ExitActions>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="AnimatedBorderBrush"
+         TargetType="Border">
+    <Setter Property="BorderBrush">
+      <Setter.Value>
+        <LinearGradientBrush>
+          <GradientStop Color="{DynamicResource TextSecondaryColor}"
+                        Offset="0"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"
+                   Value="True">
+        <DataTrigger.EnterActions>
+          <BeginStoryboard Name="StartBorderBrush">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               BeginTime="0:0:0.1"
+                               Duration="0:0:0.3"/>
+            </Storyboard>
+          </BeginStoryboard>
+        </DataTrigger.EnterActions>
+        <DataTrigger.ExitActions>
+          <BeginStoryboard>
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               Duration="0:0:0"/>
+            </Storyboard>
+          </BeginStoryboard>
+          <StopStoryboard BeginStoryboardName="StartBorderBrush"/>
+        </DataTrigger.ExitActions>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="AnimatedFlashFocus"
+         TargetType="Border">
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush>
+          <GradientStop Color="#00000000"
+                        Offset="0.0"/>
+          <GradientStop Color="#40ffffff"
+                        Offset="0.0"/>
+          <GradientStop Color="#40ffffff"
+                        Offset="1.0"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"
+                   Value="True">
+        <DataTrigger.EnterActions>
+          <BeginStoryboard Name="StartCoverFlash">
+            <Storyboard RepeatBehavior="1x">
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.2"/>
+              <DoubleAnimation Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                               From="0"
+                               To="1"
+                               BeginTime="0:0:0"
+                               Duration="0:0:0.6"/>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               BeginTime="0:0:0.6"
+                               Duration="0:0:0.3"/>
+            </Storyboard>
+          </BeginStoryboard>
+        </DataTrigger.EnterActions>
+        <DataTrigger.ExitActions>
+          <StopStoryboard BeginStoryboardName="StartCoverFlash"/>
+        </DataTrigger.ExitActions>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="AnimatedFlashCover"
+         TargetType="Border">
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush>
+          <GradientStop Color="#00000000"
+                        Offset="0.0"/>
+          <GradientStop Color="#40ffffff"
+                        Offset="0.0"/>
+          <GradientStop Color="#40ffffff"
+                        Offset="1.0"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"
+                   Value="True">
+        <DataTrigger.EnterActions>
+          <BeginStoryboard Name="StartCoverFlashRepeat">
+            <Storyboard RepeatBehavior="3x"
+                        BeginTime="0:0:4.5"
+                        Duration="0:0:4.5">
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.5"/>
+              <DoubleAnimation Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                               From="0"
+                               To="1"
+                               BeginTime="0:0:0.5"
+                               Duration="0:0:0.6"/>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               BeginTime="0:0:1.1"
+                               Duration="0:0:0.3"/>
+            </Storyboard>
+          </BeginStoryboard>
+        </DataTrigger.EnterActions>
+        <DataTrigger.ExitActions>
+          <StopStoryboard BeginStoryboardName="StartCoverFlashRepeat"/>
+        </DataTrigger.ExitActions>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="AnimatedFlashMenu"
+         TargetType="Border">
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush>
+          <GradientStop Color="#00000000 "
+                        Offset="0"/>
+          <GradientStop Color="#40ffffff"
+                        Offset="1"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"
+                   Value="True">
+        <DataTrigger.EnterActions>
+          <BeginStoryboard Name="StartFlashMenu">
+            <Storyboard RepeatBehavior="1x">
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.1"/>
+              <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               BeginTime="0:0:0.1"
+                               Duration="0:0:0.5"/>
+            </Storyboard>
+          </BeginStoryboard>
+        </DataTrigger.EnterActions>
+        <DataTrigger.ExitActions>
+          <StopStoryboard BeginStoryboardName="StartFlashMenu"/>
+        </DataTrigger.ExitActions>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <LinearGradientBrush x:Key="GameTitleBrush"
+                       StartPoint="0.5,0"
+                       EndPoint="0.5,1">
+    <GradientStop Color="#00000000"
+                  Offset="0"/>
+    <GradientStop Color="#D9000000"
+                  Offset="1"/>
+  </LinearGradientBrush>
+
+  <ImageBrush x:Key="ScrollFadeBrush"
+              ImageSource="{ThemeFile 'Images/FadeBottom.png'}"
+              RenderOptions.BitmapScalingMode="Fant"
+              Stretch="Fill"/>
+  <ImageBrush x:Key="FilterOverlayBrush"
+              ImageSource="{ThemeFile 'Images/Shade.png'}"
+              RenderOptions.BitmapScalingMode="Fant"
+              Stretch="Fill"
+              Opacity="1"/>
+  <ImageBrush x:Key="BackgroundImageBrush"
+              ImageSource="{ThemeFile 'Images/Background.jpg'}"
+              RenderOptions.BitmapScalingMode="Fant"
+              Stretch="UniformToFill"/>
+
+  <SolidColorBrush x:Key="WarningBrush"
+                   Color="#ff6b6b"/>
+
+  <Style x:Key="TextBlockGameScore"
+         TargetType="TextBlock"
+         BasedOn="{StaticResource TextBlockBoldBaseStyle}">
+    <Setter Property="Foreground"
+            Value="Transparent"/>
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="1">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="2">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="3">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="4">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="5">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="6">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="7">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="8">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="9">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="10">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="11">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="12">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="13">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="14">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="15">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="16">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="17">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="18">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="19">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="20">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="21">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="22">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="23">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="24">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="25">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="26">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="27">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="28">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="29">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="30">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="31">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="32">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="33">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="34">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="35">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="36">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="37">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="38">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="39">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="40">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="41">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="42">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="43">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="44">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="45">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="46">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="47">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="48">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="49">
+        <Setter Property="Foreground"
+                Value="{DynamicResource NegativeRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="50">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="51">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="52">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="53">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="54">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="55">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="56">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="57">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="58">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="59">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="60">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="61">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="62">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="63">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="64">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="65">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="66">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="67">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="68">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="69">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="70">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="71">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="72">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="73">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="74">
+        <Setter Property="Foreground"
+                Value="{DynamicResource MixedRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="75">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="76">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="77">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="78">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="79">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="80">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="81">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="82">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="83">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="84">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="85">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="86">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="87">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="88">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="89">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="90">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="91">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="92">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="93">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="94">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="95">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="96">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="97">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="98">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="99">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}"
+                   Value="100">
+        <Setter Property="Foreground"
+                Value="{DynamicResource PositiveRatingBrush}"/>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="NowPlayingTitleStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="8"/>
+    <Setter Property="FontWeight"
+            Value="Bold"/>
+    <Setter Property="Opacity"
+            Value="0.8"/>
+    <Setter Property="Margin"
+            Value="0,-4,0,0"/>
+  </Style>
+
+  <Style x:Key="NowPlayingGameStyle"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="25"/>
+    <Setter Property="Margin"
+            Value="0,-4,-8,-4"/>
+    <Setter Property="MaxWidth"
+            Value="275"/>
+    <Setter Property="TextTrimming"
+            Value="CharacterEllipsis"/>
+  </Style>
+
+  <!-- Override image style -->
+  <Style x:Key="NowPlayingImageStyle"
+         TargetType="Image">
+    <Setter Property="Width"
+            Value="40"/>
+    <Setter Property="Height"
+            Value="40"/>
+    <Setter Property="Margin"
+            Value="-16,-4,24,-4"/>
+    <Setter Property="Stretch"
+            Value="UniformToFill"/>
+    <Setter Property="Effect">
+      <Setter.Value>
+        <DropShadowEffect BlurRadius="2"
+                          ShadowDepth="1"
+                          Opacity="0.3"/>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
