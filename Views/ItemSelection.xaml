@@ -2,128 +2,198 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <Style x:Key="ItemSelectionButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
-        <Setter Property="Margin" Value="0,0,0,5" />
-	<Setter Property="Height" Value="50" />
-        <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-	<Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid Background="{TemplateBinding Background}">                            
-		    <Border x:Name="MainBorder" Margin="0,0,0,0" BorderThickness="3" Opacity="0" CornerRadius="2" 
-		    		Style="{DynamicResource AnimatedBorderBrush}" Tag="False" Visibility="Collapsed" >
-		    </Border>
-		    <Border x:Name="FlashMenuBorder" Margin="5" Style="{DynamicResource AnimatedFlashMenu}" 
-		    		Tag="False" Visibility="Collapsed">
-		    </Border>
-		    <StackPanel Orientation="Horizontal" >
-		    <Image x:Name="ItemSelectionImage" RenderOptions.BitmapScalingMode="Fant" RenderTransformOrigin="0.5,0.5"
-	            	Source="{ThemeFileBinding Name, PathFormat='Icons/CompletionStatus/{0}.png'}" Stretch="Uniform" 
-                    	HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    	VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="30" >
-			<Image.Style>
-		    <Style TargetType="Image">
-		    	<Setter Property="Margin" Value="10,10,10,10"/>
-		    <Style.Triggers>
-		    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source}" Value="{x:Null}">
-		    	<Setter Property="Visibility" Value="Collapsed"/>
-		    </DataTrigger>
-		    </Style.Triggers>
-		    </Style>
-		    </Image.Style>
-		    </Image>
-		    <TextBlock TextTrimming="CharacterEllipsis" TextWrapping="Wrap" 
-                    	Foreground="{TemplateBinding Foreground}" 
-                    	HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    	VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-		    <TextBlock.Style>
-		    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}" >
-		    	<Setter Property="Margin" Value="10,0,10,0"/>
-		    	<Setter Property="Opacity" Value="1"/>
-			<Setter Property="FontSize" Value="22"/>
-		    <Style.Triggers>
+  <Style x:Key="ItemSelectionButton"
+         BasedOn="{StaticResource {x:Type ButtonEx}}"
+         TargetType="ButtonEx">
+    <Setter Property="Margin"
+            Value="0,0,0,5"/>
+    <Setter Property="Height"
+            Value="50"/>
+    <Setter Property="HorizontalAlignment"
+            Value="Stretch"/>
+    <Setter Property="HorizontalContentAlignment"
+            Value="Left"/>
+    <Setter Property="VerticalContentAlignment"
+            Value="Center"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Grid Background="{TemplateBinding Background}">
+            <Border x:Name="MainBorder"
+                    Margin="0,0,0,0"
+                    BorderThickness="3"
+                    Opacity="0"
+                    CornerRadius="2"
+                    Style="{DynamicResource AnimatedBorderBrush}"
+                    Tag="False"
+                    Visibility="Collapsed">
+            </Border>
+            <Border x:Name="FlashMenuBorder"
+                    Margin="5"
+                    Style="{DynamicResource AnimatedFlashMenu}"
+                    Tag="False"
+                    Visibility="Collapsed">
+            </Border>
+            <StackPanel Orientation="Horizontal">
+              <Image x:Name="ItemSelectionImage"
+                     RenderOptions.BitmapScalingMode="Fant"
+                     RenderTransformOrigin="0.5,0.5"
+                     Source="{ThemeFileBinding Name, PathFormat='Icons/CompletionStatus/{0}.png'}"
+                     Stretch="Uniform"
+                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                     Width="30">
+                <Image.Style>
+                  <Style TargetType="Image">
+                    <Setter Property="Margin"
+                            Value="10,10,10,10"/>
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source}"
+                                   Value="{x:Null}">
+                        <Setter Property="Visibility"
+                                Value="Collapsed"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </Image.Style>
+              </Image>
+              <TextBlock TextTrimming="CharacterEllipsis"
+                         TextWrapping="Wrap"
+                         Foreground="{TemplateBinding Foreground}"
+                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock"
+                         BasedOn="{StaticResource TextBlockBaseStyle}">
+                    <Setter Property="Margin"
+                            Value="10,0,10,0"/>
+                    <Setter Property="Opacity"
+                            Value="1"/>
+                    <Setter Property="FontSize"
+                            Value="22"/>
+                    <Style.Triggers>
 
-		    </Style.Triggers>
-		    </Style>
-		    </TextBlock.Style>      
-                    <ContentPresenter />
-		    </TextBlock>
-		    </StackPanel>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-                            <Setter Property="Tag" Value="True" TargetName="FlashMenuBorder" />
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-			    <Setter Property="Visibility" Value="Visible" TargetName="FlashMenuBorder" />
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>      
+                    <ContentPresenter/>
+              </TextBlock>
+            </StackPanel>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsFocused"
+                     Value="True">
+              <Setter Property="Tag"
+                      Value="True"
+                      TargetName="MainBorder"/>
+              <Setter Property="Tag"
+                      Value="True"
+                      TargetName="FlashMenuBorder"/>
+              <Setter Property="Visibility"
+                      Value="Visible"
+                      TargetName="MainBorder"/>
+              <Setter Property="Visibility"
+                      Value="Visible"
+                      TargetName="FlashMenuBorder"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+              <Setter Property="Foreground"
+                      Value="{DynamicResource SelectionLightBrush}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
-    <Style x:Key="ItemSelectionCheckBox" BasedOn="{StaticResource {x:Type CheckBoxEx}}" TargetType="CheckBoxEx">
-        	<Setter Property="Height" Value="50" />
-        <Setter Property="ContentTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" TextTrimming="CharacterEllipsis"
-                    	Text="{Binding}" />
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+  <Style x:Key="ItemSelectionCheckBox"
+         BasedOn="{StaticResource {x:Type CheckBoxEx}}"
+         TargetType="CheckBoxEx">
+    <Setter Property="Height"
+            Value="50"/>
+    <Setter Property="ContentTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                     TextTrimming="CharacterEllipsis"
+                     Text="{Binding}"/>
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
-    <Style x:Key="ItemSelectionBorder" TargetType="Border">
-        <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="Padding" Value="10" />
-        <Setter Property="Background" Value="{DynamicResource StaticBorderBrushAlt}" />
-    </Style>
+  <Style x:Key="ItemSelectionBorder"
+         TargetType="Border">
+    <Setter Property="CornerRadius"
+            Value="5"/>
+    <Setter Property="Padding"
+            Value="10"/>
+    <Setter Property="Background"
+            Value="{DynamicResource StaticBorderBrushAlt}"/>
+  </Style>
 
-    <Style x:Key="ItemSelectionFooterBorder" TargetType="Border">
-        <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="Background" Value="#8855CDFF" />
-        <Setter Property="Padding" Value="0,10,0,10" />
-    </Style>
+  <Style x:Key="ItemSelectionFooterBorder"
+         TargetType="Border">
+    <Setter Property="CornerRadius"
+            Value="5"/>
+    <Setter Property="Background"
+            Value="#8855CDFF"/>
+    <Setter Property="Padding"
+            Value="0,10,0,10"/>
+  </Style>
 
-    <Style x:Key="ItemSelectionFooterButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
-        <Setter Property="Focusable" Value="False" /> 
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="Transparent" />
-	<Setter Property="Height" Value="30" />
-	<Setter Property="Margin" Value="10,10,10,10" />	
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid Background="{TemplateBinding Background}">
-		    <TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
-                    	Foreground="{TemplateBinding Foreground}" FontWeight="SemiBold"
-                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                        Margin="0,0">                            
-                     <ContentPresenter />
-                     </TextBlock>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+  <Style x:Key="ItemSelectionFooterButton"
+         BasedOn="{StaticResource {x:Type ButtonEx}}"
+         TargetType="ButtonEx">
+    <Setter Property="Focusable"
+            Value="False"/>
+    <Setter Property="Foreground"
+            Value="{DynamicResource TextBrush}"/>
+    <Setter Property="Background"
+            Value="Transparent"/>
+    <Setter Property="Height"
+            Value="30"/>
+    <Setter Property="Margin"
+            Value="10,10,10,10"/>
+    <Setter Property="SnapsToDevicePixels"
+            Value="True"/>
+    <Setter Property="HorizontalContentAlignment"
+            Value="Left"/>
+    <Setter Property="VerticalContentAlignment"
+            Value="Center"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Grid Background="{TemplateBinding Background}">
+            <TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
+                       Foreground="{TemplateBinding Foreground}"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                       Margin="0,0">                            
+                     <ContentPresenter/>
+            </TextBlock>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
-    <Style x:Key="ItemSelectionHeaderText" BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock" >
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="Padding" Value="15,15,15,10" />
-        <Setter Property="Margin" Value="0,0,0,10" />
-        <Setter Property="Background" Value="#8855CDFF" />
-    </Style>
+  <Style x:Key="ItemSelectionHeaderText"
+         BasedOn="{StaticResource TextBlockBaseStyle}"
+         TargetType="TextBlock">
+    <Setter Property="VerticalAlignment"
+            Value="Center"/>
+    <Setter Property="HorizontalAlignment"
+            Value="Stretch"/>
+    <Setter Property="TextWrapping"
+            Value="Wrap"/>
+    <Setter Property="Padding"
+            Value="15,15,15,10"/>
+    <Setter Property="Margin"
+            Value="0,0,0,10"/>
+    <Setter Property="Background"
+            Value="#8855CDFF"/>
+  </Style>
 </ResourceDictionary>
