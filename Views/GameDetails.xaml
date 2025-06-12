@@ -33,7 +33,6 @@
               <ColumnDefinition Width="Auto"/>
               <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-
             <Border x:Name="Overlay"
                     Grid.RowSpan="3"
                     Grid.ColumnSpan="3"
@@ -45,13 +44,6 @@
                           Value="Visible"/>
                   <Setter Property="Opacity"
                           Value="0.8"/>
-                  <!-- <Style.Triggers>
-                                                                                <DataTrigger Binding="{Binding ElementName=TrailerZoom, Path=IsChecked}"
-                                                                                             Value="True">
-                                                                                        <Setter Property="Visibility"
-                                                                                                Value="Collapsed"/>
-                                                                                </DataTrigger>
-                                                                        </Style.Triggers> -->
                 </Style>
               </Border.Style>
               <Border.Background>
@@ -844,7 +836,41 @@
                                     Height="50"
                                     Width="50"
                                     Style="{DynamicResource GameDetailsGameOptionsButton}"
-                                    Margin="0,0,0,0"/>
+                                    Margin="0,0,20,0"/>
+                          <ButtonEx Command="{PluginSettings Plugin=NowPlaying, Path=ReturnToGame}">
+                            <ButtonEx.Style>
+                              <Style TargetType="ButtonEx"
+                                     BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="Visibility"
+                                        Value="Visible"/>
+                                <Style.Triggers>
+                                  <DataTrigger Binding="{Binding Game.IsRunning}"
+                                               Value="False">
+                                    <Setter Property="Visibility"
+                                            Value="Collapsed"/>
+                                  </DataTrigger>
+                                </Style.Triggers>
+                              </Style>
+                            </ButtonEx.Style>
+                            Return to Game
+                          </ButtonEx>
+                          <ButtonEx Command="{PluginSettings Plugin=NowPlaying, Path=CloseGame}">
+                            <ButtonEx.Style>
+                              <Style TargetType="ButtonEx"
+                                     BasedOn="{StaticResource {x:Type Button}}">
+                                <Setter Property="Visibility"
+                                        Value="Visible"/>
+                                <Style.Triggers>
+                                  <DataTrigger Binding="{Binding Game.IsRunning}"
+                                               Value="False">
+                                    <Setter Property="Visibility"
+                                            Value="Collapsed"/>
+                                  </DataTrigger>
+                                </Style.Triggers>
+                              </Style>
+                            </ButtonEx.Style>
+                            Exit
+                          </ButtonEx>
                         </StackPanel>
                       </Grid>
                     </StackPanel>
