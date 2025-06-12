@@ -1,1 +1,1 @@
-~\AppData\Local\Playnite\Toolbox.exe pack
+~\AppData\Local\Playnite\Toolbox.exe pack ./ D:\playnite-themes\ 
