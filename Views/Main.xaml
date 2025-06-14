@@ -237,8 +237,8 @@
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="50"/>
                   <ColumnDefinition Width="Auto"/>
-                  <ColumnDefinition Width="*"/>
                   <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="Auto"/>
@@ -272,7 +272,33 @@
                   </Rectangle.Style>
                 </Rectangle>
 
-                <ButtonEx Grid.Column="7"
+                <!-- Menu -->
+                <ButtonEx x:Name="PART_ButtonMainMenu"
+                          VerticalAlignment="Center"
+                          Margin="0,0,0,0"
+                          Height="50"
+                          Width="50"
+                          Style="{DynamicResource ButtonMenu}"
+                          Grid.Column="1">
+                  <ButtonEx.Content>
+                    <TextBlock Text="&#xef39;"
+                               FontFamily="{StaticResource FontIcoFont}"
+                               FontSize="36"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                  </ButtonEx.Content>
+                </ButtonEx>
+                <!-- HIDDEN: Change View -->
+                <CheckBoxEx x:Name="ChangeViewButton"
+                            Margin="48,0,0,0"
+                            Height="50"
+                            Width="50"
+                            IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
+                            Style="{DynamicResource ChangeViewButton}"
+                            Grid.Column="2"/>
+                <!-- Col 3,4,5 EMPTY -->
+                <!-- Now Playing Button -->
+                <ButtonEx Grid.Column="6"
                           Command="{PluginSettings Plugin=NowPlaying, Path=OpenDialog}">
                   <ButtonEx.Style>
                     <Style TargetType="ButtonEx"
@@ -280,7 +306,7 @@
                       <Setter Property="Visibility"
                               Value="Visible"/>
                       <Setter Property="Margin"
-                              Value="60,0,-20,0"/>
+                              Value="0,0,48,0"/>
                       <Style.Triggers>
                         <DataTrigger Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}"
                                      Value="False">
@@ -310,8 +336,61 @@
                     </StackPanel>
                   </StackPanel>
                 </ButtonEx>
-
-                <Grid Grid.Column="3">
+                <!-- Update Available -->
+                <ButtonEx x:Name="PART_ButtonProgramUpdate"
+                          VerticalAlignment="Center"
+                          Margin="48,0,0,0"
+                          Height="50"
+                          Width="50"
+                          Style="{DynamicResource ButtonMenu}"
+                          Grid.Column="7">
+                  <ButtonEx.Content>
+                    <TextBlock Text="&#xef08;"
+                               FontFamily="{StaticResource FontIcoFont}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="#ff6b6b"
+                               FontSize="32"/>
+                  </ButtonEx.Content>
+                </ButtonEx>
+                <!-- Notifications -->
+                <ButtonEx x:Name="PART_ButtonNotifications"
+                          VerticalAlignment="Center"
+                          Margin="48,0,0,0"
+                          Height="50"
+                          Width="50"
+                          Focusable="True"
+                          Grid.Column="8">
+                  <Button.Content>
+                    <Grid>
+                      <TextBlock Text="&#xeea3;"
+                                 FontFamily="{StaticResource FontIcoFont}"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="34"/>
+                      <TextBlock Text="&#x25CF;"
+                                 Foreground="{DynamicResource GlyphBrush}"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Bottom"
+                                 FontSize="24"
+                                 Margin="20,20,0,0"/>
+                    </Grid>
+                  </Button.Content>
+                  <Button.Style>
+                    <Style TargetType="Button"
+                           BasedOn="{StaticResource ButtonMenu}">
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Api Notifications.Count}"
+                                     Value="0">
+                          <Setter Property="Visibility"
+                                  Value="Collapsed"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </Button.Style>
+                </ButtonEx>
+                <!-- Battery -->
+                <Grid Grid.Column="9">
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -477,7 +556,7 @@
                                       Opacity="0.8"/>
                   </Grid.Effect>
                 </Grid>
-
+                <!-- Clock -->
                 <TextBlock x:Name="PART_TextClock"
                            Style="{DynamicResource TextBlockBaseStyleAlt}"
                            VerticalAlignment="Center"
@@ -492,79 +571,6 @@
                                       Opacity="0.8"/>
                   </TextBlock.Effect>
                 </TextBlock>
-                <ButtonEx x:Name="PART_ButtonProgramUpdate"
-                          VerticalAlignment="Center"
-                          Margin="70,0,0,0"
-                          Height="50"
-                          Width="50"
-                          Style="{DynamicResource ButtonMenu}"
-                          Grid.Column="4">
-                  <ButtonEx.Content>
-                    <TextBlock Text="&#xef08;"
-                               FontFamily="{StaticResource FontIcoFont}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Foreground="#ff6b6b"
-                               FontSize="32"/>
-                  </ButtonEx.Content>
-                </ButtonEx>
-                <ButtonEx x:Name="PART_ButtonNotifications"
-                          VerticalAlignment="Center"
-                          Margin="70,0,0,0"
-                          Height="50"
-                          Width="50"
-                          Focusable="True"
-                          Grid.Column="5">
-                  <Button.Content>
-                    <Grid>
-                      <TextBlock Text="&#xeea3;"
-                                 FontFamily="{StaticResource FontIcoFont}"
-                                 HorizontalAlignment="Center"
-                                 VerticalAlignment="Center"
-                                 FontSize="34"/>
-                      <TextBlock Text="&#x25CF;"
-                                 Foreground="{DynamicResource GlyphBrush}"
-                                 HorizontalAlignment="Right"
-                                 VerticalAlignment="Bottom"
-                                 FontSize="24"
-                                 Margin="20,20,0,0"/>
-                    </Grid>
-                  </Button.Content>
-                  <Button.Style>
-                    <Style TargetType="Button"
-                           BasedOn="{StaticResource ButtonMenu}">
-                      <Style.Triggers>
-                        <DataTrigger Binding="{Api Notifications.Count}"
-                                     Value="0">
-                          <Setter Property="Visibility"
-                                  Value="Collapsed"/>
-                        </DataTrigger>
-                      </Style.Triggers>
-                    </Style>
-                  </Button.Style>
-                </ButtonEx>
-                <CheckBoxEx x:Name="ChangeViewButton"
-                            Margin="70,0,0,0"
-                            Height="50"
-                            Width="50"
-                            IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
-                            Style="{DynamicResource ChangeViewButton}"
-                            Grid.Column="8"/>
-                <ButtonEx x:Name="PART_ButtonMainMenu"
-                          VerticalAlignment="Center"
-                          Margin="70,0,0,0"
-                          Height="50"
-                          Width="50"
-                          Style="{DynamicResource ButtonMenu}"
-                          Grid.Column="9">
-                  <ButtonEx.Content>
-                    <TextBlock Text="&#xef39;"
-                               FontFamily="{StaticResource FontIcoFont}"
-                               FontSize="36"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
-                  </ButtonEx.Content>
-                </ButtonEx>
               </Grid>
 
               <Grid x:Name="BackgroundImageGrid"
@@ -1410,6 +1416,8 @@
                                 Value="Left"/>
                         <Setter Property="VerticalAlignment"
                                 Value="Center"/>
+                        <Setter Property="Visibility"
+                                Value="Collapsed"/>
                         <Style.Triggers>
                           <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source}"
                                        Value="{x:Null}">
@@ -1435,6 +1443,8 @@
                                 Value="Left"/>
                         <Setter Property="VerticalAlignment"
                                 Value="Center"/>
+                        <Setter Property="Visibility"
+                                Value="Collapsed"/>
                         <Style.Triggers>
                           <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source}"
                                        Value="{x:Null}">
