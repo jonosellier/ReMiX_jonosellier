@@ -1,0 +1,1 @@
+.\scripts\live-copy.ps1 -inputDir "./source" -outputDir "~/Appdata/Playnite/Themes/Fullscreen/Remix_jonosellier"
