@@ -6,3 +6,9 @@ Packages:
     PackageUrl: https://github.com/jonosellier/ReMiX_jonosellier/releases/download/v1.4/ReMiX_jonosellier_1_4.pthm
     Changelog:
       - Reviving abandoned theme
+  - Version: 1.4.1
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-6-16
+    PackageUrl: https://github.com/jonosellier/ReMiX_jonosellier/releases/download/v1.4.1/ReMiX_jonosellier_1_4_1.pthm
+    Changelog:
+      - Fix battery margins
